@@ -9643,6 +9643,31 @@
 							</ErrorMessage>
 						</ErrorMessages>
 					</Check>
+					<Check id="75">
+						<Name namespace="Protocol.Params.Param.Display.Decimals">CheckDecimalsTag</Name>
+						<ErrorMessages>
+							<ErrorMessage id="1">
+								<Name>InvalidDecimalsForDatetime</Name>
+								<GroupDescription />
+								<Description templateId="1010">
+									<InputParameters>
+										<InputParameter id="0" value="Display/Decimals">tagName</InputParameter>
+										<InputParameter id="1" value="8">expectedValue</InputParameter>
+										<InputParameter id="2" value="Param">itemKind</InputParameter>
+										<InputParameter id="3">paramid</InputParameter>
+									</InputParameters>
+								</Description>
+								<Severity>Major</Severity>
+								<Certainty>Certain</Certainty>
+								<Source>Validator</Source>
+								<FixImpact>NonBreaking</FixImpact>
+								<HasCodeFix>False</HasCodeFix>
+								<HowToFix><![CDATA[Add a Protocol/Params/Param/Display/Decimals tag with value 8]]></HowToFix>
+								<ExampleCode><![CDATA[<Display>[NewLine]   <RTDisplay>true</RTDisplay>[NewLine]   <Decimals>8</Decimals>[NewLine]</Display>[NewLine]<Measurement>[NewLine]   <Type options="datetime">number</Type>[NewLine]</Measurement>]]></ExampleCode>
+								<Details><![CDATA[By default, only 6 decimals are saved in memory. Parameters holding datetime values need at least 8 decimals to be accurate.[NewLine]Otherwise, there might be rounding issues when retrieving the parameter from an external source like an Automation script.]]></Details>
+							</ErrorMessage>
+						</ErrorMessages>
+					</Check>
 				</Checks>
 			</Category>
 			<Category id="3">
